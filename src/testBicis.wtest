@@ -1,0 +1,94 @@
+import bicis.*
+import accesorios.*
+
+describe "primera bici" {
+	
+	const farolito = new Farolito()
+	const bicicletaUno = new Bicicleta(rodado=28, largo=150, marca = "olmo", accesorios = [farolito])
+	
+	test "altura" {
+		assert.equals(85, bicicletaUno.altura())
+	}
+	
+	test "velocidad" {
+		assert.equals(34, bicicletaUno.velocidad())
+	}
+	
+	test "carga" {
+		assert.equals(0, bicicletaUno.carga())
+	}
+	
+	test "peso" {
+		assert.equals(14.5, bicicletaUno.peso())
+	}
+	
+	test "tiene luz" {
+		assert.that(bicicletaUno.tieneLuz())
+	}
+	
+	test "accesorios livianos" {
+		assert.equals(1, bicicletaUno.cantAccLivianos())
+	}
+}
+
+describe "segunda bici" {
+	
+	const farolito = new Farolito()
+	const canasto = new Canasto(volumen = 8)
+	const morral = new MorralBici(largo = 21, ojoDeGato= true)
+	const bicicletaDos = new Bicicleta(rodado=26, largo=110, marca = "legnano", accesorios = [farolito, canasto, morral])
+	
+	test "altura" {
+		assert.equals(80, bicicletaDos.altura())
+	}
+	
+	test "velocidad" {
+		assert.equals(28, bicicletaDos.velocidad())
+	}
+	
+	test "carga" {
+		assert.equals(23, bicicletaDos.carga())
+	}
+	
+	test "peso" {
+		assert.equals(15.5, bicicletaDos.peso())
+	}
+	
+	test "tiene luz" {
+		assert.that(bicicletaDos.tieneLuz())
+	}
+	
+	test "accesorios livianos" {
+		assert.equals(2, bicicletaDos.cantAccLivianos())
+	}
+}
+
+describe "tercer bici" {
+	
+	const morral = new MorralBici(largo=6, ojoDeGato=false)
+	const bicicletaTres = new Bicicleta(rodado=20, largo=90, marca = "legnano", accesorios = [morral])
+	
+	test "altura" {
+		assert.equals(65, bicicletaTres.altura())
+	}
+	
+	test "velocidad" {
+		assert.equals(22, bicicletaTres.velocidad())
+	}
+	
+	test "carga" {
+		assert.equals(2, bicicletaTres.carga())
+	}
+	
+	test "peso" {
+		assert.equals(11.2, bicicletaTres.peso())
+	}
+	
+	test "tiene luz" {
+		assert.notThat(bicicletaTres.tieneLuz())
+	}
+	
+	test "accesorios livianos" {
+		assert.equals(0, bicicletaTres.cantAccLivianos())
+	}
+}

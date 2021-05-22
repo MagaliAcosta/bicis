@@ -1,7 +1,7 @@
 import bicis.*
 import accesorios.*
 
-object deposito {
+class Deposito {
 	var property bicicletas = []
 	
 	method biciRapidas() = bicicletas.filter({ bici => bici.velocidad() > 25 })

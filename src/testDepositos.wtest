@@ -12,6 +12,7 @@ describe "primer deposito" {
 	const bicicletaDos = new Bicicleta(rodado=26, largo=110, marca = "legnano", accesorios = [farolito2, canasto, morral])
 	const morral2 = new MorralBici(largo=6, ojoDeGato=false)
 	const bicicletaTres = new Bicicleta(rodado=20, largo=90, marca = "legnano", accesorios = [morral2])
+	const deposito = new Deposito()
 	
 	fixture {
 		deposito.bicicletas([bicicletaUno, bicicletaDos, bicicletaTres])
